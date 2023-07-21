@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-bjornrodin-bookacontrac-wjkm9mrzy7o.ws-eu102.gitpod.io']
+ALLOWED_HOSTS = ['book-a-contractor.herokuapp.com', '8000-bjornrodin-bookacontrac-wjkm9mrzy7o.ws-eu102.gitpod.io']
 
 
 # Application definition
@@ -61,7 +61,7 @@ ROOT_URLCONF = 'bookacontractor.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
