@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'bootstrap4',
     'cloudinary',
     'booking',
-    'bookacontractor/',
 ]
 
 MIDDLEWARE = [
