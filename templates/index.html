@@ -7,7 +7,11 @@
     <p class="lead">We Plan & Build for Your Future!</p>
     <br>
     <p>Book a session and see what we can do for you</p>
-    <a class="btn btn-primary btn-lg btn-book-session" href="#">Book a Session</a>
+    {% if user.is_authenticated %}
+    <a class="btn btn-primary btn-lg btn-book-session" href="{% url 'booking-form' %}">Book a Session</a>
+    {% else %}
+    <a class="btn btn-primary btn-lg btn-book-session" href="{% url 'login' %}">Book a Session</a>
+    {% endif %}
 </div>
 
 {% endblock %}
