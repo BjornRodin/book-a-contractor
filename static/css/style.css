@@ -55,6 +55,11 @@ body.custom-background-base::before {
 
 /* Footer */
 
+footer {
+    background-color: black;
+    z-index: 1;
+}
+
 .social-media {
     color: #fafafa;
     font-size: x-large;
