@@ -1,9 +1,23 @@
 /* Base.html */
 
 body.custom-background-base {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
     background-image: url(https://res.cloudinary.com/dgeozss3n/image/upload/v1690792525/pexels-anamul-rezwan-1216589_noju7u.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
+}
+
+body.custom-background-base::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
