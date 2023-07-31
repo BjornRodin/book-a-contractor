@@ -69,3 +69,18 @@ footer {
 .social-media:active {
     color: #BF0449;
 }
+
+/* Index.html */
+
+.white-text {
+    color: #fafafa;
+}
+
+.btn-book-session {
+    background-color: #BF0449;
+    border-color: #BF0449;
+}
+
+.btn-book-session:hover {
+    background-color: #5e7ebf;
+}
