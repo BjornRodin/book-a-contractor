@@ -43,7 +43,8 @@
                             href="{% url 'my-bookings' %}">My Bookings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'index' %}">Logout</a>
+                        <a class="nav-link {% if request.path == '/accounts/logout/' %}active{% endif %}"
+                            href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -51,8 +52,8 @@
                             href="{% url 'register' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == '/login/' %}active{% endif %}"
-                            href="{% url 'login' %}">Login</a>
+                        <a class="nav-link {% if request.path == '/accounts/login/' %}active{% endif %}"
+                            href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                 </ul>
