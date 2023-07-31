@@ -1,5 +1,17 @@
 /* Base.html */
 
+/* Navbar */
+
+.navbar-brand {
+    color: black;
+}
+
+/* Body */
+
+body {
+    font-family: 'Lisu Bosa', sans-serif;
+}
+
 body.custom-background-base {
     position: relative;
     min-height: 100vh;
@@ -20,4 +32,16 @@ body.custom-background-base::before {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: -1;
+}
+
+/* Footer */
+
+.social-media {
+    color: #fafafa;
+    font-size: x-large;
+}
+
+.social-media:hover,
+.social-media:active {
+    color: #BF0449;
 }
