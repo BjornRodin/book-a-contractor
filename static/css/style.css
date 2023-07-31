@@ -1,0 +1,9 @@
+/* Base.html */
+
+body.custom-background-base {
+    background-image: url(https://res.cloudinary.com/dgeozss3n/image/upload/v1690792525/pexels-anamul-rezwan-1216589_noju7u.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
