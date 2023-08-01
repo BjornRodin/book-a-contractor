@@ -7,4 +7,4 @@ class Booking(models.Model):
     email = models.EmailField()
     date_and_time = models.DateTimeField()
     project_type = models.CharField(max_length=50)
-    project_details = models.TextField(max_length=250)
+    project_details = models.TextField()
