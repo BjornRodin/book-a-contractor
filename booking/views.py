@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
+from .forms import BookingForm
+from .models import Booking
+from django.contrib import messages
 
 def index(request):
     return render(request, 'index.html')
@@ -17,4 +20,12 @@ def login(request):
 
 @login_required
 def booking_form(request):
-    return render(request, 'booking_form.html')
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your Session has successfully been booked.')
+            return redirect('index')
+    else:
+        form = BookingForm()
+    return render(request, 'booking_form.html', {'form': form})
