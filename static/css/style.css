@@ -84,3 +84,34 @@ footer {
 .btn-book-session:hover {
     background-color: #5e7ebf;
 }
+
+/* Login.html */
+
+.background-custom-red {
+    background-color: #BF0449;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.btn-redirect-signup {
+    padding: 2px;
+    background-color: #a7b3d9;
+    border-color: #A7B3D9;
+    color: black;
+}
+
+.btn-login {
+    background-color: #a7b3d9;
+    border-color: #A7B3D9;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.btn-login:hover,
+.btn-redirect-signup:hover {
+    background-color: #d94f30;
+    border-color: #d94f30;
+    color: black;
+}

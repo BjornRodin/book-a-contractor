@@ -8,12 +8,13 @@
 {% block content %}
 
 <div class="container d-flex flex-column justify-content-center align-items-center vh-100 white-text">
-  <div class="col-lg-6 col-md-8 col-sm-10">
-    <h1 class="text-center">{% trans "Sign In" %}</h1>
+  <div class="col-lg-6 col-md-8 col-sm-10 background-custom-red">
+    <h1 class="text-center mb-4">{% trans "Login" %}</h1>
 
 
     <p class="text-center">{% blocktrans %}If you have not created an account yet, then please
-      <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+      <a class="btn btn-primary btn-redirect-signup" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+    </p>
 
 
     <form class="login text-center" method="POST" action="{% url 'account_login' %}">
@@ -22,7 +23,7 @@
       {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
       {% endif %}
-      <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+      <button class="btn btn-primary d-block mx-auto btn-login" type="submit">{% trans "Login" %}</button>
     </form>
   </div>
 </div>
