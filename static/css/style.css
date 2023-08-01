@@ -100,7 +100,7 @@ footer {
     color: black;
 }
 
-.btn-login {
+.btn-login-signup-logout {
     background-color: #a7b3d9;
     border-color: #A7B3D9;
     color: black;
@@ -109,7 +109,7 @@ footer {
     letter-spacing: 1px;
 }
 
-.btn-login:hover,
+.btn-login-signup-logout:hover,
 .btn-redirect-signup-signin:hover {
     background-color: #d94f30;
     border-color: #d94f30;
