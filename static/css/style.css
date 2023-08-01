@@ -53,6 +53,20 @@ body.custom-background-base::before {
     z-index: -1;
 }
 
+/* Alert Messages */
+
+.custom-alert {
+    display: flex;
+    min-width: fit-content;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    margin-top: 15px;
+    background-color: lightgreen;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
 /* Footer */
 
 footer {
@@ -114,4 +128,11 @@ footer {
     background-color: #d94f30;
     border-color: #d94f30;
     color: black;
+}
+
+/* Media queries */
+@media (max-width: 400px) {
+    .custom-alert {
+        white-space: normal;
+    }
 }
