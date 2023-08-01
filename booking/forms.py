@@ -20,6 +20,11 @@ class BookingForm(forms.ModelForm):
     """
     project_type = forms.ChoiceField(choices=PROJECTTYPE_CHOICES, widget=forms.Select(attrs={'class': 'form-control'}))
     project_details = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 5}))
+    date_and_time = forms.DateTimeField(
+        input_formats=["%Y-%m-%d %H:%M"],
+        widget=forms.TextInput(attrs={'class': 'form-control'}),
+        help_text="Enter date and time in this format: 'YYYY-MM-DD HH:mm'"
+    )
 
     class Meta:
         model = Booking

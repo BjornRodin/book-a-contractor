@@ -123,8 +123,20 @@ footer {
     letter-spacing: 1px;
 }
 
+.btn-make-booking {
+    padding: 2px;
+    background-color: #a7b3d9;
+    border-color: #A7B3D9;
+    color: black;
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
 .btn-login-signup-logout:hover,
-.btn-redirect-signup-signin:hover {
+.btn-redirect-signup-signin:hover,
+.btn-make-booking:hover {
     background-color: #d94f30;
     border-color: #d94f30;
     color: black;
