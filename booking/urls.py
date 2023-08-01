@@ -5,6 +5,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('my-bookings/', views.my_bookings, name='my-bookings'),
     path('register/', views.register, name='register'),
-    path('login/', views.CustomLoginView.as_view(), name='login'),
+    path('login/', views.login, name='login'),
     path('booking-form/', views.booking_form, name='booking-form'),
 ]

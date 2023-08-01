@@ -43,7 +43,7 @@
                             href="{% url 'my-bookings' %}">My Bookings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="showLogoutConfirmation()">Logout</a>
+                        <a class="nav-link" href="{% url 'account/logout/' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -51,8 +51,8 @@
                             href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == '/login/' %}active{% endif %}"
-                            href="{% url 'login' %}">Login</a>
+                        <a class="nav-link {% if request.path == 'account/login/' %}active{% endif %}"
+                            href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -91,27 +91,6 @@
         </p>
     </footer>
 
-    <!-- Logout Confirmation Modal -->
-
-    <div class="modal fade" id="logoutConfirmationModal" tabindex="-1" aria-labelledby="logoutConfirmationModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="logoutConfirmationModalLabel">Logout Confirmation</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Are you sure you want to logout?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <a class="btn btn-primary" href="{% url 'account_logout' %}">Yes</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Scripts -->
 
     <script>
@@ -121,10 +100,6 @@
             alert.close();
         }, 3000);
     </script>
-    <script>
-        function showLogoutConfirmation() {
-            $('#logoutConfirmationModal').modal('show');
-        }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
