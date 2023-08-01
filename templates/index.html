@@ -10,7 +10,7 @@
     {% if user.is_authenticated %}
     <a class="btn btn-primary btn-lg btn-book-session" href="{% url 'booking-form' %}">Book a Session</a>
     {% else %}
-    <a class="btn btn-primary btn-lg btn-book-session" href="{% url 'login' %}">Book a Session</a>
+    <a class="btn btn-primary btn-lg btn-book-session" href="{% url 'account_login' %}">Book a Session</a>
     {% endif %}
 </div>
 
