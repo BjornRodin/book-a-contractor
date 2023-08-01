@@ -93,7 +93,7 @@ footer {
     padding: 10px;
 }
 
-.btn-redirect-signup {
+.btn-redirect-signup-signin {
     padding: 2px;
     background-color: #a7b3d9;
     border-color: #A7B3D9;
@@ -110,7 +110,7 @@ footer {
 }
 
 .btn-login:hover,
-.btn-redirect-signup:hover {
+.btn-redirect-signup-signin:hover {
     background-color: #d94f30;
     border-color: #d94f30;
     color: black;
