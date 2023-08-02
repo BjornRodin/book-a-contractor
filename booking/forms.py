@@ -2,6 +2,7 @@ from django import forms
 from .models import Booking
 from bootstrap_datepicker_plus.widgets import DatePickerInput, TimePickerInput
 from datetime import datetime, timedelta
+from django.core.exceptions import ValidationError
 
 # Defining choices for a dropdown in the form
 PROJECTTYPE_CHOICES = [
@@ -50,12 +51,6 @@ class BookingForm(forms.ModelForm):
         help_text="Choose a time from available options",
     )
 
-    #date_and_time = forms.DateTimeField(
-    #    input_formats=["%Y-%m-%d %H:%M"],
-    #    widget=forms.TextInput(attrs={'class': 'form-control'}),
-    #    help_text="Enter date and time in this format: 'YYYY-MM-DD HH:mm'"
-    #)
-
     class Meta:
         model = Booking
         fields = [
@@ -67,3 +62,13 @@ class BookingForm(forms.ModelForm):
             'project_type',
             'project_details'
             ]
+
+    def clean(self):
+    # Checking if the user already has a booking at the chosen date and prevents doublebookings 
+        cleaned_data = super().clean()
+        date = cleaned_data.get('date')
+        if date:
+            existing_booking = Booking.objects.filter(date=date).exists()
+            if existing_booking:
+                raise forms.ValidationError("You already have booked a session for this date.")
+        return cleaned_data
