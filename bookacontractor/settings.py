@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'bootstrap_datepicker_plus',
     'bootstrap4',
     'cloudinary',
     'crispy_forms',
