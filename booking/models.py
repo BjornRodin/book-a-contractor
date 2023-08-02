@@ -1,8 +1,10 @@
 from django.db import models
 from datetime import date
+from django.contrib.auth.models import User
 
 # Model for booking a session
 class Booking(models.Model):
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, default=None)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField()

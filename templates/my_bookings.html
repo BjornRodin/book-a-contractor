@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p>My bookings</p>
+{% if user_bookings %}
+<ul>
+    {% for booking in user_bookings %}
+    <li>
+        {{ booking.date }} - {{ booking.time }}: {{ booking.project_type }}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>You have no bookings yet.</p>
+{% endif %}
 {% endblock %}

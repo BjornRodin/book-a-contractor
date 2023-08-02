@@ -11,7 +11,8 @@ def index(request):
 
 @login_required
 def my_bookings(request):
-    return render(request, 'my_bookings.html')
+    user_bookings = Booking.objects.filter(user=request.user)
+    return render(request, 'my_bookings.html', {'user_bookings': user_bookings})
 
 def register(request):
     return render(request, 'register.html')
@@ -24,7 +25,9 @@ def booking_form(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
-            form.save()
+            booking = form.save(commit=False)
+            booking.user = request.user
+            booking.save()
             messages.success(request, 'Your Session has successfully been booked.')
             return redirect('my-bookings')
     else:
