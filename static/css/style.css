@@ -99,12 +99,21 @@ footer {
     background-color: #5e7ebf;
 }
 
-/* login, signup, logout, booking_form */
+/* login, signup, logout, booking_form, my_bookings*/
 
 .background-custom-red {
     background-color: #BF0449;
     border-radius: 15px;
     padding: 10px;
+}
+
+.custom-margin-top {
+    margin-top: 20px;
+}
+
+.card.container {
+    width: 90%;
+    max-width: 25rem;
 }
 
 .btn-redirect-signup-signin {
