@@ -64,11 +64,12 @@ class BookingForm(forms.ModelForm):
             ]
 
     def clean(self):
-    # Checking if the user already has a booking at the chosen date and prevents doublebookings 
+    # Checking if there is a booking at the chosen date and prevents doublebookings 
         cleaned_data = super().clean()
         date = cleaned_data.get('date')
-        if date:
-            existing_booking = Booking.objects.filter(date=date).exists()
+        time = cleaned_data.get('time')
+        if date and time:
+            existing_booking = Booking.objects.filter(date=date, time=time).exists()
             if existing_booking:
-                raise forms.ValidationError("You already have booked a session for this date.")
+                raise forms.ValidationError("Sorry, that date and time is already fully booked.")
         return cleaned_data

@@ -107,13 +107,22 @@ footer {
     padding: 10px;
 }
 
-.custom-margin-top {
+.my-booking-header {
     margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.custom-margin {
+    margin: 10px;
 }
 
 .card.container {
-    width: 90%;
+    width: 95%;
     max-width: 25rem;
+}
+
+.card-custom-size {
+    width: 100%;
 }
 
 .btn-redirect-signup-signin {
