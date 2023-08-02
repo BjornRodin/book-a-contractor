@@ -3,7 +3,8 @@
 
 <div class="container d-flex flex-column justify-content-center align-items-center white-text my-booking-header">
     <h1 class="text-center display-1">My Booked Session</h1>
-    <p class="lead text-center">Here you can see all information about your booked session regarding the project
+    <p class="lead text-center view-booking-custom-p">Here you can see all information about your booked session
+        regarding the project
         "{{ booking.project_type }}". Click any of the buttons below depending on what you want to do.</p>
     <div class="card container d-flex flex-column justify-content-center align-items-center white-text">
         <div class="card-body text-center background-custom-red custom-margin card-custom-size">
@@ -16,9 +17,11 @@
             <p class="card-text">Project Details: {{ booking.project_details }}</p>
             <div class="d-flex justify-content-between">
                 <a class="btn btn-primary btn-lg btn-custom-view" href="#">Update</a>
-                <a class="btn btn-primary btn-lg btn-custom-view" href="{% url 'my-bookings' %}">Back</a>
                 <a class="btn btn-danger btn-lg btn-custom-delete" href="#">Delete</a>
             </div>
         </div>
     </div>
+    <a class="btn btn-primary btn-lg btn-custom-back" href="{% url 'my-bookings' %}">Back</a>
 </div>
+
+{% endblock %}

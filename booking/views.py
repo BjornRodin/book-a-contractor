@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from .forms import BookingForm
@@ -33,3 +33,8 @@ def booking_form(request):
     else:
         form = BookingForm()
     return render(request, 'booking_form.html', {'form': form})
+
+@login_required
+def view_booking(request, pk):
+    booking = get_object_or_404(Booking, pk=pk, user=request.user)
+    return render(request, 'view_booking.html', {'booking': booking})
