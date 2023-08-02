@@ -132,6 +132,25 @@ footer {
     color: black;
 }
 
+.btn-custom-delete {
+    background-color: black;
+    border-color: black;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-right: 5%;
+}
+
+.btn-custom-view {
+    background-color: #a7b3d9;
+    border-color: #A7B3D9;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-left: 5%;
+}
+
 .btn-login-signup-logout {
     background-color: #a7b3d9;
     border-color: #A7B3D9;
@@ -154,7 +173,9 @@ footer {
 
 .btn-login-signup-logout:hover,
 .btn-redirect-signup-signin:hover,
-.btn-make-booking:hover {
+.btn-make-booking:hover,
+.btn-custom-view:hover,
+.btn-custom-delete:hover {
     background-color: #d94f30;
     border-color: #d94f30;
     color: black;
@@ -176,5 +197,11 @@ footer {
 @media (max-width: 400px) {
     .custom-alert {
         white-space: normal;
+    }
+
+    .btn-custom-view,
+    .btn-custom-delete {
+        margin: auto;
+        padding: 8px;
     }
 }
