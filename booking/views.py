@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from .forms import BookingForm
 from .models import Booking
 from django.contrib import messages
+from datetime import datetime
 
 def index(request):
     return render(request, 'index.html')

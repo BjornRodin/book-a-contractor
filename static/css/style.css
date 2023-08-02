@@ -142,6 +142,11 @@ footer {
     color: black;
 }
 
+/* Help_text */
+.form-text.text-muted {
+    color: #fafafa !important;
+}
+
 /* Media queries */
 @media (max-width: 400px) {
     .custom-alert {
