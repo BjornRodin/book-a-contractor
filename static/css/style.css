@@ -158,6 +158,11 @@ footer {
 .btn-custom-back {
     background-color: #BF0449;
     border-color: #BF0449;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 20px;
+    width: 95%;
+    max-width: 25rem;
 }
 
 .btn-login-signup-logout {
