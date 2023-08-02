@@ -142,9 +142,16 @@ footer {
     color: black;
 }
 
-/* Help_text */
+/* Help_text and invalid feedback */
 .form-text.text-muted {
     color: #fafafa !important;
+}
+
+.invalid-feedback {
+    background-color: #A7B3D9;
+    padding-left: 5px;
+    color: black;
+    border-radius: 5px;
 }
 
 /* Media queries */
