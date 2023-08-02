@@ -26,7 +26,7 @@ def booking_form(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Your Session has successfully been booked.')
-            return redirect('index')
+            return redirect('my-bookings')
     else:
         form = BookingForm()
     return render(request, 'booking_form.html', {'form': form})
