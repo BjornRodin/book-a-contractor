@@ -4,7 +4,9 @@ from bootstrap_datepicker_plus.widgets import DatePickerInput, TimePickerInput
 from datetime import datetime, timedelta
 from django.core.exceptions import ValidationError
 
-""" Defining choices for a dropdown in the form """
+""" 
+Defining choices for a dropdown in the form 
+"""
 PROJECTTYPE_CHOICES = [
     ('Kitchen', 'Kitchen'),
     ('Outdoor Deck', 'Outdoor Deck'),
@@ -88,7 +90,10 @@ class BookingForm(forms.ModelForm):
             self.fields['project_details'].initial = instance.project_details
 
     def clean(self):
-
+        """
+        Get cleaned data from the form and get date and time and instance
+        Then checks if date and time already exists to prevent double bookings
+        """
         cleaned_data = super().clean()
         date = cleaned_data.get('date')
         time = cleaned_data.get('time')

@@ -1,6 +1,9 @@
 from . import views
 from django.urls import path
 
+"""
+All paths needed to navigate
+"""
 urlpatterns = [
     path('', views.index, name='index'),
     path('my-bookings/', views.my_bookings, name='my-bookings'),

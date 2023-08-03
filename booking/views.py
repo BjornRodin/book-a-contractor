@@ -6,13 +6,11 @@ from .models import Booking
 from django.contrib import messages
 from datetime import datetime
 
+"""
+Renders index (landing page), register and login for none-authorized users
+"""
 def index(request):
     return render(request, 'index.html')
-
-@login_required
-def my_bookings(request):
-    user_bookings = Booking.objects.filter(user=request.user)
-    return render(request, 'my_bookings.html', {'user_bookings': user_bookings})
 
 def register(request):
     return render(request, 'register.html')
@@ -20,16 +18,26 @@ def register(request):
 def login(request):
     return render(request, 'login.html')
 
+"""
+Renders my bookings, booking form, view booking, delete booking, update booking
+for authorized users only.
+"""
+
+@login_required
+def my_bookings(request):
+    """
+    Check if there is any existing bookings for the logged in user, then renders page with content
+    """
+    user_bookings = Booking.objects.filter(user=request.user)
+    return render(request, 'my_bookings.html', {'user_bookings': user_bookings})
+
 @login_required
 def booking_form(request, pk=None):
-    if pk:
-        # If primary key exists, then get existing booking
-        booking = get_object_or_404(Booking, pk=pk, user=request.user)
-    else:
-        booking = None
-
+    """
+    Handle creation of new bookings
+    """
     if request.method == 'POST':
-        form = BookingForm(request.POST, instance=booking)
+        form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
             booking.user = request.user
@@ -37,16 +45,23 @@ def booking_form(request, pk=None):
             messages.success(request, 'Your Session has successfully been booked.')
             return redirect('my-bookings')
     else:
-        form = BookingForm(instance=booking)
+        form = BookingForm()
     return render(request, 'booking_form.html', {'form': form})
 
 @login_required
 def view_booking(request, pk):
+    """
+    Find the booking the user click on and renders it with all its information
+    """
     booking = get_object_or_404(Booking, pk=pk, user=request.user)
     return render(request, 'view_booking.html', {'booking': booking})
 
 @login_required
 def delete_booking(request, pk):
+    """
+    Get the booking the user want to delete
+    If deleted user is presented with a message
+    """
     booking = get_object_or_404(Booking, pk=pk, user=request.user)
     if request.method == 'POST':
         booking.delete()
@@ -56,6 +71,9 @@ def delete_booking(request, pk):
 
 @login_required
 def update_booking(request, pk):
+    """
+    Handle updates of existing booked sessions
+    """
     booking = get_object_or_404(Booking, pk=pk, user=request.user)
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
