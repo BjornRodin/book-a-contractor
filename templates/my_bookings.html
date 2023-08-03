@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div>
     <div class="container d-flex flex-column justify-content-center align-items-center white-text my-booking-header">
         <h1 class="text-center display-1">My Bookings</h1>
     </div>
-
+    <!-- Check if there is any bookings, if there is they are rendered in their own cards. -->
     {% if user_bookings %}
     <div class="container">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 white-text">
@@ -27,6 +26,7 @@
         </div>
     </div>
     {% else %}
+    <!-- If no bookings are mad the user is presented with message -->
     <div class="card container d-flex flex-column justify-content-center align-items-center white-text">
         <div class="card-body text-center background-custom-red custom-margin">
             <h5 class="card-title">You have not yet booked a session</h5>

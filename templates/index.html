@@ -1,7 +1,6 @@
 {% extends "base.html" %}
-
 {% block content %}
-
+<!-- Show a different button depending on if user is authenticated. -->
 <div class="container d-flex flex-column justify-content-center align-items-center vh-100 white-text">
     <h1 class="display-1 text-center">Contractor Crew</h1>
     <p class="lead text-center">We Plan & Build for Your Future!</p>
@@ -13,5 +12,4 @@
     <a class="btn btn-primary btn-lg btn-book-session" href="{% url 'account_login' %}">Book a Session</a>
     {% endif %}
 </div>
-
 {% endblock %}

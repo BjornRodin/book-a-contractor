@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!-- Show a card asking if the user want to delete the booking. -->
 <div class="container d-flex flex-column justify-content-center align-items-center white-text vh-100">
     <div class="card container d-flex flex-column justify-content-center align-items-center white-text">
         {% if user.is_authenticated %}
@@ -13,6 +13,7 @@
         </div>
         <a class="btn btn-primary btn-lg btn-custom-back" href="{% url 'my-bookings' %}">Cancel</a>
         {% else %}
+        <!-- If not authorised the user is presented with message -->
         <div class="col-md-10 text-center">
             <p class="lead">You are not yet logged in!</p>
             <p>To login, please press the button below.</p>
@@ -21,5 +22,4 @@
     </div>
     {% endif %}
 </div>
-
 {% endblock %}

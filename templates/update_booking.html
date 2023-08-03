@@ -1,24 +1,25 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-
+<!-- Renders the form that the user want to update, still making sure user is authorised. -->
 <div class="container d-flex flex-column justify-content-center align-items-center vh-100 white-text">
     <div class="col-lg-6 col-md-8 col-sm-10 background-custom-red">
         {% if user.is_authenticated %}
         <div class="col-md-10">
             <h1 class="mt-4">Update Your Booked Session</h1>
+            <!-- Form with Cross-Site Request Forgery token to protect agains such attacks -->
             <form method="post">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="d-flex justify-content-between">
+                    <!-- Button to save changes or go back to users bookings -->
                     <button type="submit" class="btn btn-primary btn-make-booking">Save Changes</button>
                     <a class="btn btn-primary btn-lg btn-make-booking" href="{% url 'my-bookings' %}">Cancel</a>
                 </div>
             </form>
-
         </div>
-
         {% else %}
+        <!-- If not authorised the user is presented with message -->
         <div class="col-md-10 text-center">
             <p class="lead">You are not yet logged in!</p>
             <p>To login, please press the button below.</p>

@@ -6,18 +6,14 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-
+<!-- Present the user with a login page and if user has no account they can click sign up-->
 <div class="container d-flex flex-column justify-content-center align-items-center vh-100 white-text">
   <div class="col-lg-6 col-md-8 col-sm-10 background-custom-red">
     <h1 class="text-center mb-4">{% trans "Login" %}</h1>
-
-
     <p class="text-center">{% blocktrans %}If you have not created an account yet, then please
       <a class="btn btn-primary btn-redirect-signup-signin" href="{{ signup_url }}">sign up</a>
       first.{% endblocktrans %}
     </p>
-
-
     <form class="login text-center" method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}
       {{ form.as_p }}
@@ -28,5 +24,4 @@
     </form>
   </div>
 </div>
-
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!-- Renders the specific booking the user want to view -->
 <div class="container d-flex flex-column justify-content-center align-items-center white-text my-booking-header">
     {% if user.is_authenticated %}
     <h1 class="text-center display-1">My Booked Session</h1>
@@ -17,6 +17,7 @@
             <p class="card-text">Project Type: {{ booking.project_type }}</p>
             <p class="card-text">Project Details: {{ booking.project_details }}</p>
             <div class="d-flex justify-content-between">
+                <!-- Buttons to either update or delete booking  -->
                 <a class="btn btn-primary btn-lg btn-custom-view"
                     href="{% url 'update-booking' booking.pk %}">Update</a>
                 <a class="btn btn-danger btn-lg btn-custom-delete"
@@ -24,6 +25,7 @@
             </div>
         </div>
     </div>
+    <!-- Button to go back to the users bookings -->
     <a class="btn btn-primary btn-lg btn-custom-back" href="{% url 'my-bookings' %}">Back</a>
     {% else %}
     <div class="col-md-10 text-center">

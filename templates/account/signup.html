@@ -5,16 +5,14 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-
+<!-- Renders a form to register. If user has an account they can navigate to sign in-->
 <div class="container d-flex flex-column justify-content-center align-items-center vh-100 white-text">
   <div class="col-lg-6 col-md-8 col-sm-10 background-custom-red">
     <h1 class="text-center mb-4">{% trans "Sign Up" %}</h1>
-
     <p class="text-center">{% blocktrans %}Already have an account? Then please <a
         class="btn btn-primary btn-redirect-signup-signin" href=" {{ login_url }}">sign
         in</a>.{% endblocktrans %}
     </p>
-
     <form class="signup text-center" id="signup_form" method="post" action="{% url 'account_signup' %}">
       {% csrf_token %}
       {{ form.as_p }}
@@ -26,5 +24,4 @@
     </form>
   </div>
 </div>
-
 {% endblock %}
