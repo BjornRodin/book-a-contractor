@@ -2,7 +2,6 @@ from django.db import models
 from datetime import date
 from django.contrib.auth.models import User
 
-# Model for booking a session
 class Booking(models.Model):
     """
     Model for storing content for booked sessions
