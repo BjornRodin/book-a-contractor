@@ -163,6 +163,7 @@ footer {
     font-size: 20px;
     width: 95%;
     max-width: 25rem;
+    margin-top: 10px;
 }
 
 .btn-login-signup-logout {
