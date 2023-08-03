@@ -19,7 +19,7 @@ PROJECTTYPE_CHOICES = [
 
 class BookingForm(forms.ModelForm):
     """
-    Creating a custom form to handle bookings.
+    Creating a custom form to handle bookings (new and updates).
     Create dropdown, textfield and datepicker with widgets
     Form-control class to for bootstrap styling
     """
@@ -78,7 +78,7 @@ class BookingForm(forms.ModelForm):
         instance = kwargs.get('instance')
         super().__init__(*args, **kwargs)
         if instance:
-            # Populates the form with the previously entered data
+            # Populates the form with the previously entered data for specific booking
             self.fields['first_name'].initial = instance.first_name
             self.fields['last_name'].initial = instance.last_name
             self.fields['email'].initial = instance.email
