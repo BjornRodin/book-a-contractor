@@ -73,3 +73,16 @@ class BookingForm(forms.ModelForm):
             if existing_booking:
                 raise forms.ValidationError("Sorry, that date and time is already fully booked.")
         return cleaned_data
+
+class UpdateBookingForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = [
+            'first_name',
+            'last_name',
+            'email',
+            'date',
+            'time',
+            'project_type',
+            'project_details'
+            ]
