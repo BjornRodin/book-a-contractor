@@ -1,15 +1,12 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
-
 {% block content %}
-
 <div class="container d-flex flex-column justify-content-center align-items-center vh-100 white-text">
     <div class="col-lg-6 col-md-8 col-sm-10 background-custom-red">
         {% if user.is_authenticated %}
         <div class="col-md-10">
             <h1 class="mt-4">Book Your Session</h1>
-            <form method="post"
-                action="{% if pk %}{% url 'update-booking' pk %}{% else %}{% url 'booking-form' %}{% endif %}">
+            <form method="post">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <button type="submit" class="btn btn-primary btn-make-booking">Make Booking</button>
@@ -24,9 +21,7 @@
         {% endif %}
     </div>
 </div>
-
 {% endblock %}
-
 {% block scripts %}
 {{ form.media }}
 {% endblock%}
