@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
 
 <div class="container d-flex flex-column justify-content-center align-items-center vh-100 white-text">
@@ -12,7 +13,7 @@
                 <button type="submit" class="btn btn-primary btn-make-booking">Save Changes</button>
             </form>
         </div>
-        <a class="btn btn-primary btn-lg btn-custom-back" href="{% url 'view-booking' %}">Cancel</a>
+        <a class="btn btn-primary btn-lg btn-custom-back" href="{% url 'my-bookings' %}">Cancel</a>
         {% else %}
         <div class="col-md-10 text-center">
             <p class="lead">You are not yet logged in!</p>
@@ -22,5 +23,7 @@
         {% endif %}
     </div>
 </div>
-
+{% endblock %}
+{% block scripts %}
+{{ form.media }}
 {% endblock %}

@@ -56,7 +56,7 @@ def update_booking(request, pk):
         if form.is_valid():
             form.save()
             messages.success(request, 'Your booked session was successfully updated.')
-            return redirect('view-booking')
+            return redirect('my-bookings')
     else:
         form = UpdateBookingForm(instance=booking)
     return render(request, 'update_booking.html', {'form': form})

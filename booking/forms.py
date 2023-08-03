@@ -75,6 +75,37 @@ class BookingForm(forms.ModelForm):
         return cleaned_data
 
 class UpdateBookingForm(forms.ModelForm):
+    
+    project_type = forms.ChoiceField(choices=PROJECTTYPE_CHOICES, widget=forms.Select(attrs={'class': 'form-control'}))
+    project_details = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 5}))
+    
+    date = forms.DateField(
+        widget=DatePickerInput(
+            options={
+                "format": "YYYY-MM-DD",
+                "minDate": (datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d'),
+                "maxDate": (datetime.now() + timedelta(days=365)).strftime('%Y-%m-%d'),
+                "showTodayButton": True,
+            },
+            attrs={"class": "form-control"},
+        ),
+        help_text="Choose a date: 'YYYY-MM-DD'",
+    )
+
+    time = forms.ChoiceField(
+        choices=[
+            ('09:00', '09:00 - 10:00'),
+            ('10:00', '10:00 - 11:00'),
+            ('11:00', '11:00 - 12:00'),
+            ('13:00', '13:00 - 14:00'),
+            ('14:00', '14:00 - 15:00'),
+            ('17:00', '17:00 - 18:00'),
+            ('18:00', '18:00 - 19:00'),
+        ],
+        widget=forms.Select(attrs={'class': 'form-control'}),
+        help_text="Choose a time from available options",
+    )
+
     class Meta:
         model = Booking
         fields = [
