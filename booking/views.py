@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
-from .forms import BookingForm
+from .forms import BookingForm, UpdateBookingForm
 from .models import Booking
 from django.contrib import messages
 from datetime import datetime
@@ -47,3 +47,16 @@ def delete_booking(request, pk):
         messages.success(request, 'You have successfully deleted your booked session.')
         return redirect('my-bookings')
     return render(request, 'delete_booking.html', {'booking': booking})
+
+@login_required
+def update_booking(request, pk):
+    booking = get_object_or_404(Booking, pk=pk, user=request.user)
+    if request.method == 'POST':
+        form = UpdateBookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your booked session was successfully updated.')
+            return redirect('view-booking')
+    else:
+        form = UpdateBookingForm(instance=booking)
+    return render(request, 'update_booking.html', {'form': form})
