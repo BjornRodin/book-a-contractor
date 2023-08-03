@@ -2,8 +2,8 @@
 {% block content %}
 
 <div class="container d-flex flex-column justify-content-center align-items-center white-text vh-100">
-    {% if user.is_authenticated %}
     <div class="card container d-flex flex-column justify-content-center align-items-center white-text">
+        {% if user.is_authenticated %}
         <div class="card-body text-center background-custom-red custom-margin card-custom-size">
             <h5 class="card-title">Are you sure you want to delete this booking?</h5>
             <form method="post">
@@ -11,13 +11,13 @@
                 <button type="submit" class="btn btn-danger btn-lg btn-custom-delete">Delete Booking</button>
             </form>
         </div>
-    </div>
-    <a class="btn btn-primary btn-lg btn-custom-back" href="{% url 'my-bookings' %}">Cancel</a>
-    {% else %}
-    <div class="col-md-10 text-center">
-        <p class="lead">You are not yet logged in!</p>
-        <p>To login, please press the button below.</p>
-        <a class="btn btn-primary btn-lg btn-make-booking" href="{% url 'account_login' %}">Login</a>
+        <a class="btn btn-primary btn-lg btn-custom-back" href="{% url 'my-bookings' %}">Cancel</a>
+        {% else %}
+        <div class="col-md-10 text-center">
+            <p class="lead">You are not yet logged in!</p>
+            <p>To login, please press the button below.</p>
+            <a class="btn btn-primary btn-lg btn-make-booking" href="{% url 'account_login' %}">Login</a>
+        </div>
     </div>
     {% endif %}
 </div>
