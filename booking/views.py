@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
-from .forms import BookingForm, UpdateBookingForm
+from .forms import BookingForm
 from .models import Booking
 from django.contrib import messages
 from datetime import datetime
@@ -21,9 +21,15 @@ def login(request):
     return render(request, 'login.html')
 
 @login_required
-def booking_form(request):
+def booking_form(request, pk=None):
+    if pk:
+        # If primary key exists, then get existing booking
+        booking = get_object_or_404(Booking, pk=pk, user=request.user)
+    else:
+        booking = None
+
     if request.method == 'POST':
-        form = BookingForm(request.POST)
+        form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
             booking = form.save(commit=False)
             booking.user = request.user
@@ -31,7 +37,7 @@ def booking_form(request):
             messages.success(request, 'Your Session has successfully been booked.')
             return redirect('my-bookings')
     else:
-        form = BookingForm()
+        form = BookingForm(instance=booking)
     return render(request, 'booking_form.html', {'form': form})
 
 @login_required
@@ -52,11 +58,11 @@ def delete_booking(request, pk):
 def update_booking(request, pk):
     booking = get_object_or_404(Booking, pk=pk, user=request.user)
     if request.method == 'POST':
-        form = UpdateBookingForm(request.POST, instance=booking)
+        form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()
             messages.success(request, 'Your booked session was successfully updated.')
             return redirect('my-bookings')
     else:
-        form = UpdateBookingForm(instance=booking)
+        form = BookingForm(instance=booking)
     return render(request, 'update_booking.html', {'form': form})

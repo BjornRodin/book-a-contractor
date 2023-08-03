@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 
 # Model for booking a session
 class Booking(models.Model):
+    """
+    Model for storing content for booked sessions
+    """
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, default=None)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
