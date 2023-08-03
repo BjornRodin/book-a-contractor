@@ -38,3 +38,12 @@ def booking_form(request):
 def view_booking(request, pk):
     booking = get_object_or_404(Booking, pk=pk, user=request.user)
     return render(request, 'view_booking.html', {'booking': booking})
+
+@login_required
+def delete_booking(request, pk):
+    booking = get_object_or_404(Booking, pk=pk, user=request.user)
+    if request.method == 'POST':
+        booking.delete()
+        messages.success(request, 'You have successfully deleted your booked session.')
+        return redirect('my-bookings')
+    return render(request, 'delete_booking.html', {'booking': booking})

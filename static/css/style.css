@@ -190,7 +190,8 @@ footer {
 .btn-redirect-signup-signin:hover,
 .btn-make-booking:hover,
 .btn-custom-view:hover,
-.btn-custom-delete:hover {
+.btn-custom-delete:hover,
+.btn-custom-back:hover {
     background-color: #d94f30;
     border-color: #d94f30;
     color: black;

@@ -15,7 +15,8 @@
             <p class="card-text">Time: {{ booking.time }}</p>
             <div class="d-flex justify-content-between">
                 <a class="btn btn-primary btn-lg btn-custom-view" href="{% url 'view-booking' booking.pk %}">View</a>
-                <a class="btn btn-danger btn-lg btn-custom-delete" href="#">Delete</a>
+                <a class="btn btn-danger btn-lg btn-custom-delete"
+                    href="{% url 'delete-booking' booking.pk %}">Delete</a>
             </div>
         </div>
         {% endfor %}
