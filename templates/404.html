@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container d-flex flex-column justify-content-center align-items-center vh-100 white-text">
+    <h1 class="display-1 text-center">Oops! Looks like something went wrong there!</h1>
+    <p class="lead text-center">The requested page was not found. Click the button below to return. </p>
+    <a class="btn btn-primary btn-lg btn-book-session" href="{% url 'index' %}">Take Me Back</a>
+</div>
+{% endblock%}

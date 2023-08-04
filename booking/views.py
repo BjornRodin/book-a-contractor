@@ -19,6 +19,12 @@ def login(request):
     return render(request, 'login.html')
 
 """
+Renders a 404 error-page if a 404 error occurs
+"""
+def handler404(request, exception):
+    return render(request, '404.html', status=404)
+
+"""
 Renders my bookings, booking form, view booking, delete booking, update booking
 for authorized users only.
 """
