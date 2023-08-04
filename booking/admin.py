@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Booking
 from django_summernote.admin import SummernoteModelAdmin
 
+
 @admin.register(Booking)
 class BookingAdmin(SummernoteModelAdmin):
     """
@@ -9,7 +10,8 @@ class BookingAdmin(SummernoteModelAdmin):
     Features added to view certain information in a list,
     Search for specific elements
     A filter to quickly check bookings within that filter
-    And fields for textareas so they are more customizable and clearly visible when viewing a booking
+    And fields for textareas so they are more customizable and clearly
+    visible when viewing a booking
     """
     list_display = (
         'first_name',

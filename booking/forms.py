@@ -4,8 +4,8 @@ from bootstrap_datepicker_plus.widgets import DatePickerInput, TimePickerInput
 from datetime import datetime, timedelta
 from django.core.exceptions import ValidationError
 
-""" 
-Defining choices for a dropdown in the form 
+"""
+Defining choices for a dropdown in the form
 """
 PROJECTTYPE_CHOICES = [
     ('Kitchen', 'Kitchen'),
@@ -25,16 +25,21 @@ class BookingForm(forms.ModelForm):
     Create dropdown, textfield and datepicker with widgets
     Form-control class to for bootstrap styling
     """
-    project_type = forms.ChoiceField(choices=PROJECTTYPE_CHOICES, widget=forms.Select(attrs={'class': 'form-control'}))
-    project_details = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 5}))
-    
+    project_type = forms.ChoiceField(
+        choices=PROJECTTYPE_CHOICES,
+        widget=forms.Select(attrs={'class': 'form-control'})
+        )
+    project_details = forms.CharField(
+        widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 5}))
     date = forms.DateField(
         widget=DatePickerInput(
             # Limits the user to book sessions from tomorrow and 365 days ahead
             options={
                 "format": "YYYY-MM-DD",
-                "minDate": (datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d'),
-                "maxDate": (datetime.now() + timedelta(days=365)).strftime('%Y-%m-%d'),
+                "minDate": (datetime.now() + \
+                            timedelta(days=1)).strftime('%Y-%m-%d'),
+                "maxDate": (datetime.now() + \
+                            timedelta(days=365)).strftime('%Y-%m-%d'),
                 "showTodayButton": True,
             },
             attrs={"class": "form-control"},
@@ -72,7 +77,7 @@ class BookingForm(forms.ModelForm):
             'project_type',
             'project_details'
             ]
-    
+
     def __init__(self, *args, **kwargs):
         """
         Handles updates to booked bookings
@@ -80,7 +85,10 @@ class BookingForm(forms.ModelForm):
         instance = kwargs.get('instance')
         super().__init__(*args, **kwargs)
         if instance:
-            # Populates the form with the previously entered data for specific booking
+            """
+            Populates the form with the previously entered data for specific
+            booking
+            """
             self.fields['first_name'].initial = instance.first_name
             self.fields['last_name'].initial = instance.last_name
             self.fields['email'].initial = instance.email
@@ -104,5 +112,6 @@ class BookingForm(forms.ModelForm):
             if instance:
                 existing_booking = existing_booking.exclude(pk=instance.pk)
             if existing_booking.exists():
-                raise forms.ValidationError("Sorry, that date and time is already fully booked.")
+                raise forms.ValidationError("Sorry, that date and time \
+                is already fully booked.")
         return cleaned_data

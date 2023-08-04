@@ -6,7 +6,8 @@ class Booking(models.Model):
     """
     Model for storing content for booked sessions
     """
-    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, default=None)
+    user = models.ForeignKey(
+        User, null=True, on_delete=models.CASCADE, default=None)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField()
