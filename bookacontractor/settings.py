@@ -145,8 +145,8 @@ USE_TZ = True
 # Thanks to: https://stackoverflow.com/questions/57405472/connection
 # refusederror-at-accounts-register/62883357#62883357?newreg=
 # 3ae225976a1e42d68314973e74f75041
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# ACCOUNT_EMAIL_VERIFICATION = "none"
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
