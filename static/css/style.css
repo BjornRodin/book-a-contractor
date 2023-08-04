@@ -12,6 +12,8 @@ body.custom-background-base {
     position: relative;
     min-height: 100vh;
     margin: 0;
+    background-color: #A7B3D9;
+    /* Fallback background incase image wouldn't load */
     background-image: url(https://res.cloudinary.com/dgeozss3n/image/upload/v1690792525/pexels-anamul-rezwan-1216589_noju7u.jpg);
     background-size: cover;
     background-repeat: no-repeat;
