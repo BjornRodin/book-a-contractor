@@ -29,8 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    'book-a-contractor-e3bf2a381fca.herokuapp.com',
+ALLOWED_HOSTS = ['book-a-contractor-e3bf2a381fca.herokuapp.com',
     '8000-bjornrodin-bookacontrac-wjkm9mrzy7o.ws-eu102.gitpod.io'
     ]
 
@@ -144,6 +143,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
