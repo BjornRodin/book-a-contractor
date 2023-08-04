@@ -27,7 +27,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['book-a-contractor-e3bf2a381fca.herokuapp.com', '8000-bjornrodin-bookacontrac-wjkm9mrzy7o.ws-eu102.gitpod.io']
 
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'bootstrap_datepicker_plus',
     'bootstrap4',
     'cloudinary',
+    'django_summernote',
     'crispy_forms',
     'crispy_bootstrap4',
     'booking',
