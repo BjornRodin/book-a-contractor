@@ -15,3 +15,5 @@ urlpatterns = [
     path('delete-booking/<int:pk>/', views.delete_booking, name='delete-booking'),
     path('update-booking/<int:pk>/', views.update_booking, name='update-booking'),
 ]
+
+handler404 = views.handler404
