@@ -62,28 +62,32 @@ The goal for this website is to provide people with an simple and easy way to ge
 ### User Stories
 
 #### Site User
-As a first time visitor I want to:
-- quickly find and understand the rules.
-- know how to start the game.
-- get feedback along the way of the game.
+- As a Site User I can view and edit my booked session(s) so that I can edit any of the information previously provided if needed.
+- As a Site User I can cancel my bookings so that I can delete a previously made booking when logged in.
+- As a Site User I can quickly find possible social links in the footer so that navigate to those links.
+- As a Site User I can navigate the site easily so that I know where I am and where I can see and do certain things.
+- As a Site User I can login so that I can book a session and view my current bookings.
+- As a Site User I can register to the site so that I can book a session
+- As a Site User I can click the button on the home-page so that I can make a booking.
+- As a Site User I can not book several sessions during the same date so that can't double-book myself if I already have a booking that day.
 
 #### Site Admin/Owner
-As a returning visitor I want to:
-- be able to quickly restart the game when it's over.
-- see the top scores so I can try to beat it.
-- have a calm background and game with pleasing design.
+- As a Site Admin I can manage booked sessions user's made so that I can manage my bookings.
+- As a Site Owner I can display relevant content to my profession such as images, text and a clear button for bookings so that site users can clearly see what the site is for.
 
 ### Design
 
 #### Graphics
-The graphics of the hangman was designed from how I used to play the game as a kid when doing it on a whiteboard at school. By using "/", "\", "0" & "|" I could replicate a simple, but useful, graphic that updates over time in the game.
+Generally the graphics I was going for was to make it as simple and clear as possible for anyone who visits the website. I did not want it to be cluttered in any way, shape or form. I've worked in the construction field myself and to have simple websites is a key for that industry. So what I went for was a clean landing-page with clear intentions of the site itself. 
 
-![Hangman-graphics](documentation/readme-images/hangman-graphic.JPG)
+![General-graphics](static/documentation/readme-images/general-graphics.png)
 
-#### Flowchart
-To create the general idea of how the game logically should be running I made a simple flowchart with [Lucidchart](https://www.lucidchart.com). By doing this I had something to lean back on when programming so I had something to guide me. I was almost certain that it was not going to be made exactly as I made the chart, as I have never done one before, but I am happy with the result. It's pretty close to the end product as well so it definitely was a good thing to spend time on. If anything I would probably spend more time on that in the future for other projects, but due to some time-constraints on my end this time I couldn't spend more time on it. 
+#### Lucid Chart
+[Lucidchart](https://www.lucidchart.com) was used to create the flowchart to better get an idea of how the page is navigated and who can see what and at what stage. By doing this I could better understand where I was going at each stage. A relationship table was also created for the models using the same tool.
 
-![Flowchart](documentation/readme-images/flowcharthangman.JPG)
+![Flowchart](static/documentation/readme-images/flowchart.PNG)
+
+![Diagram](static/documentation/readme-images/relation-diagram.PNG)
 
 ## Features
 

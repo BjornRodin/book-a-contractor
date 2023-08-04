@@ -7,16 +7,10 @@ from django.contrib import messages
 from datetime import datetime
 
 """
-Renders index (landing page), register and login for none-authorized users
+Renders index (landing page)
 """
 def index(request):
     return render(request, 'index.html')
-
-def register(request):
-    return render(request, 'register.html')
-
-def login(request):
-    return render(request, 'login.html')
 
 """
 Renders a 404 error-page if a 404 error occurs

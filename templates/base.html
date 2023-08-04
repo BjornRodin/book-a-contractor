@@ -52,11 +52,11 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == '/register/' %}active{% endif %}"
+                        <a class="nav-link {% if request.path == '/accounts/signup/' %}active{% endif %}"
                             href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == 'account/login/' %}active{% endif %}"
+                        <a class="nav-link {% if request.path == '/accounts/login/' %}active{% endif %}"
                             href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
