@@ -10,7 +10,7 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 white-text">
             {% for booking in user_bookings %}
             <div class="col">
-                <div class="card-body text-center background-custom-red custom-margin card-custom-size">
+                <div class="card-body text-center background-custom-red custom-margin">
                     <h5 class="card-title">Regarding project: {{ booking.project_type }}</h5>
                     <p class="card-text">Date: {{ booking.date }}</p>
                     <p class="card-text">Time: {{ booking.time }}</p>

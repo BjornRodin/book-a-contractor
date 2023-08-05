@@ -4,7 +4,7 @@
 <div class="container d-flex flex-column justify-content-center align-items-center white-text vh-100">
     <div class="card container d-flex flex-column justify-content-center align-items-center white-text">
         {% if user.is_authenticated %}
-        <div class="card-body text-center background-custom-red custom-margin card-custom-size">
+        <div class="card-body text-center background-custom-red custom-margin">
             <h5 class="card-title">Are you sure you want to delete this booking?</h5>
             <form method="post">
                 {% csrf_token %}

@@ -275,7 +275,6 @@ To validate the HTML code in this project and not get errors because of the Djan
 ![Htmldeleteerror](static/documentation/readme-images/htmlcheck-delete-error.PNG)
 ![Htmldelete](static/documentation/readme-images/htmlcheck-delete.PNG)
 
-
 #### W3C CSS Validation Service
 This was done using [Jigsaw](https://jigsaw.w3.org/css-validator/#validate_by_input) and compying all code from css as a direct input.
 - No errors was found in the code
@@ -352,35 +351,31 @@ The tests are all made in the same way:
 1. In incognito-mode
 2. The same configuration is used, showed in below image. Only 'Device' was changed in between the tests.
     
-    ![Lightouse Configuration](documentation/readme-images/Lighthouse-configuration.JPG)
+    ![Lightouse Configuration](static/documentation/readme-images/lighthouse-config.PNG)
 
 - Desktop
+    -  Not very much to say more than that the scoring is really good
 
-    ![desktoplighthouse](documentation/readme-images/lighthouse-desktop.JPG)
+    ![desktoplighthouse](static/documentation/readme-images/lighthouse-desktop.PNG)
 - Mobile
+    - Score is slightly lower for mobile devices than on the desktop but still a good score and i'm happy with that.
 
-    ![mobilelighthouse](documentation/readme-images/lighthouse-mobile.JPG)
+    ![mobilelighthouse](static/documentation/readme-images/lighthouse-mobile.PNG)
 
-#### Python Validator
-To test the python code the [CI Python Linter](https://pep8ci.herokuapp.com/#) was used. To do it I copied all code from GitPod and printed it to the validator. I forgot to printscreen the first result but after handling all the things it mentioned the code is now all clear and validated.
-Most things that it raised as issues was: to few spaces between functions, some whitespaces that had to be removed and code being to wide. I made the changes inside the validator first as it was updating live whenever I made a change so it was a really handy tool to use!
-
-![python-validator](documentation/readme-images/python-validator.JPG)
-
-#### Warnings
-No present warnings anywhere else.
 
 ### Manual Testing
 Tested according to below image and passing everything.
 
-![manual-testing](documentation/readme-images/manual-testing.JPG)
+![feature-testing](static/documentation/readme-images/feature-test.PNG)
 
 #### Responsiveness
-I can't really test the responsiveness as "it is what it is", but I still put it into the Am I Responsive website just to get some images for it. However, the game works both on desktop and on mobiles.
+The responsiveness of the website was tested with google chromes devtools and was tested with all devices available there. Below is a few images from different sizes.
+I can't find any responsive design issues on any of the pages. The images are, in order: Desktop, Nest Hub, Galaxy S8 and another to show the dropdown meny for navbar on smaller screensizes.
 
-[Am I Responsive?](https://ui.dev/amiresponsive?url=https://hangman-3000.herokuapp.com/)
-
-![Am I Responsive?](documentation/readme-images/introduction-image.JPG)
+![Desktop-responsive](static/documentation/readme-images/responsive-desktop-bookings.PNG)
+![Nest-responsive](static/documentation/readme-images/responsive-nest-booking.PNG)
+![Mobilebooking-responsive](static/documentation/readme-images/responsive-mb-bookings.PNG)
+![Mobilenavbar-responsive](static/documentation/readme-images/responsive-mb-navbar.PNG)
 
 ## Bugs
 1. Encountered a "bug" where it could be possible for the random word to be an empty cell if any of those were to be present in the spreadsheet.
